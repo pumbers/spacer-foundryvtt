@@ -1,0 +1,57 @@
+@reference "./spacer.css";
+
+.theme-dark .spacer i[class^="icon-"] {
+  @apply invert-100;
+}
+
+.spacer {
+  & i[class^="icon-"] {
+    @apply inline-block !w-[1em] !h-[1em] leading-[1em] relative top-[0.1em] text-black dark:invert-100;
+    filter: brightness(0) saturate(100%) invert(16%) sepia(0%) saturate(24%) hue-rotate(172deg) brightness(85%)
+      contrast(97%);
+    @media (prefers-color-scheme: dark) {
+      filter: brightness(0) saturate(100%) invert(90%) sepia(61%) saturate(2753%) hue-rotate(188deg) brightness(127%)
+        contrast(93%);
+    }
+    &.warning {
+      filter: brightness(0) saturate(100%) invert(58%) sepia(33%) saturate(3104%) hue-rotate(360deg) brightness(104%)
+        contrast(107%);
+    }
+    &.danger {
+      filter: brightness(0) saturate(100%) invert(27%) sepia(63%) saturate(6083%) hue-rotate(0deg) brightness(100%)
+        contrast(110%);
+    }
+    &.faded {
+      filter: brightness(0) saturate(100%) invert(71%) sepia(4%) saturate(30%) hue-rotate(23deg) brightness(96%)
+        contrast(89%);
+    }
+  }
+
+  /* Dice */
+  & .icon-d4::before {
+    content: url("../assets/icons/d6.svg");
+  }
+  & .icon-d6::before {
+    content: url("../assets/icons/d6.svg");
+  }
+  & .icon-d8::before {
+    content: url("../assets/icons/d6.svg");
+  }
+  & .icon-d10::before {
+    content: url("../assets/icons/d6.svg");
+  }
+  & .icon-d12::before {
+    content: url("../assets/icons/d6.svg");
+  }
+  & .icon-d20::before {
+    content: url("../assets/icons/d20.svg");
+  }
+  & .icon-rolling-dice::before {
+    content: url("../assets/icons/rolling-dice.svg");
+  }
+
+  /* Trait Types */
+  & .icon-homeworld::before {
+    content: url("../assets/icons/d6.svg");
+  }
+}

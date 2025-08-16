@@ -1,0 +1,31 @@
+{{!-- Notes Tab --}}
+<section id="{{partId}}" class="tab {{tabs.gear.cssClass}}" data-group="primary" data-tab="gear">
+    <table id="gear">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>CR</th>
+                <th>Qual</th>
+                <th>Slots</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each gear as | item |}}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.system.credits}}</td>
+                <td>{{item.system.quality}}</td>
+                <td>{{item.system.slots}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{system.slotsUsed}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>

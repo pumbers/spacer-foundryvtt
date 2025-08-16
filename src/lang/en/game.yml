@@ -1,0 +1,16 @@
+WH:
+  game:
+    #Settings
+    settings:
+    # General Messages
+    messages:
+  # Generic Labels
+  label:
+    notes: Notes
+  # Generic Actions
+  action:
+    edit: Edit
+  # Generic Options
+  options:
+    select: -- Select One --
+    none: -- None --

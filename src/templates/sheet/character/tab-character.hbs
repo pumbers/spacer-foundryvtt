@@ -1,0 +1,23 @@
+{{!-- Notes Tab --}}
+<section id="{{partId}}" class="tab {{tabs.character.cssClass}}" data-group="primary" data-tab="character">
+    <div id="character" class="flex flex-col gap-2">
+        {{!-- Attributes --}}
+        <div id="attributes">
+            {{#each system.attributes as | attribute key |}}
+            <div class="field">
+                <label>{{localize (concat "SPACER.actor.attribute." key)}}</label>
+                <input type="text" value="{{attribute.value}}/{{numberFormat attribute.bonus sign=true}}" readonly>
+            </div>
+            {{/each}}
+        </div>
+        {{!-- Traits --}}
+        <div id="traits">
+            {{#each traits as | trait |}}
+            <div class="trait">
+                <label class="trait__name">{{trait.name}}</label>
+                <p class="trait__notes">{{{trait.system.notes}}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

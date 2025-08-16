@@ -1,0 +1,81 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@source "../module/system/config.mjs";
+
+@custom-variant dark (&:where(.theme-dark, .theme-dark *));
+
+.spacer,
+.spacer.application {
+  .window-content {
+    input,
+    textarea,
+    select {
+      @apply w-full h-6 shadow-none m-0 p-1 leading-4;
+      &::placeholder {
+        @apply opacity-80;
+      }
+      &:focus {
+        @apply outline-none shadow-none;
+      }
+      &[readonly],
+      &[disabled] {
+        @apply cursor-not-allowed;
+      }
+    }
+
+    nav.sheet-tabs.tabs {
+      @apply my-2 text-[0.6rem];
+    }
+
+    section.tab {
+      @apply grow;
+    }
+
+    .field {
+      @apply flex flex-col gap-0.5 mt-auto mb-0 !leading-2;
+      label {
+        @apply m-0 p-0 text-[0.6rem] uppercase;
+      }
+    }
+
+    .effect {
+      table {
+        @apply h-4;
+      }
+      th,
+      td {
+        &:last-child {
+          @apply text-left;
+        }
+      }
+      .actions {
+        @apply flex flex-col gap-1 justify-start;
+        button[data-action] {
+          @apply w-auto px-1 cursor-pointer text-xs;
+        }
+      }
+    }
+
+    .draggable {
+      @apply cursor-grab;
+    }
+
+    a {
+      text-shadow: none;
+    }
+
+    [data-action] {
+      @apply cursor-pointer;
+    }
+
+    [data-action].sheet-button {
+      @apply block;
+    }
+
+    div.tags.input-element-tags {
+      @apply justify-start;
+    }
+  }
+}

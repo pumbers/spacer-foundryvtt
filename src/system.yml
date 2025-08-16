@@ -1,0 +1,57 @@
+id: spacer
+version: 0.1.0
+title: Spacer v3
+description: Spacer v3 for FoundryVTT (Official - Alpha)
+compatibility:
+  minimum: "13"
+  verified: "13.347"
+authors:
+  - name: 3rdDog
+license: LICENSE.txt
+url: https://github.com/pumbers/spacer-foundryvtt
+manifest: "#{MANIFEST}#"
+download: "#{DOWNLOAD}#"
+bugs: https://github.com/pumbers/spacer-foundryvtt/issues
+esmodules:
+  - module/spacer.mjs
+styles:
+  - styles/spacer.css
+  - styles/icons.css
+  - styles/applications.css
+  - styles/character-sheet.css
+  - styles/npc-sheet.css
+  - styles/item-sheet.css
+  - styles/vehicle-sheet.css
+languages:
+  - lang: en
+    name: English
+    path: lang/en.json
+grid:
+  type: 2
+  distance: 5
+  units: ft
+primaryTokenAttribute: hp.value
+documentTypes:
+  Actor:
+    character:
+      htmlFields:
+        - notes
+    npc:
+      htmlFields:
+        - notes
+    vehicle:
+      htmlFields:
+        - notes
+  Item:
+    trait:
+      htmlFields:
+        - notes
+    gear:
+      htmlFields:
+        - notes
+    weapon:
+      htmlFields:
+        - notes
+    armour:
+      htmlFields:
+        - notes

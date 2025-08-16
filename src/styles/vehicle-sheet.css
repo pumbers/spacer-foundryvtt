@@ -1,0 +1,15 @@
+@reference "./spacer.css";
+
+.spacer.vehicle.sheet {
+  .window-content {
+    .sheet-header {
+      @apply flex flex-row gap-2;
+      input.name {
+        @apply w-full h-10 m-0 p-1 text-3xl font-bold;
+      }
+      img.profile-img {
+        @apply rounded-none size-10 object-cover flex-none;
+      }
+    }
+  }
+}

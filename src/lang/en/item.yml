@@ -1,0 +1,32 @@
+SPACER:
+  item:
+    type:
+      trait: Trait
+      gear: Gear
+      armour: Armour
+      weapon: Weapon
+    weapon:
+      melee: Melee
+      missile: Missile
+      "1H": 1 Handed
+      "2H": 2 Handed
+      trait:
+        hidden: Hidden
+        stun: Stun
+    sheet:
+      title: "{name}"
+      tab:
+        item: item
+        notes: Notes
+        effects: Effects
+      label:
+        credits: Credits
+        quality: Quality
+        slots: Slots
+        defence: Defence
+        type: Type
+        hand: Hand
+        damage: Damage
+        traits: Traits
+        notes: Notes
+      action:

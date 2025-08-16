@@ -1,0 +1,21 @@
+SPACER:
+  actor:
+    attribute:
+      str: Strength
+      agi: Agility
+      phy: Physique
+      int: Intellect
+      ins: Insight
+      pre: Presence
+    sheet:
+      title: "{name}"
+      tab:
+        character: Character
+        gear: Gear
+        notes: Notes
+        effects: Effects
+      label:
+        level: Level
+        xp: XP
+        hd: Hit Die
+        hp: Hit Points

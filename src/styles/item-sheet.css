@@ -1,0 +1,19 @@
+@reference "./spacer.css";
+
+.spacer.item.sheet {
+  .window-content {
+    .sheet-header {
+      @apply flex flex-row gap-2;
+      input.name {
+        @apply w-full h-8 m-0 p-2 px-2 text-3xl font-bold;
+      }
+      img.item-img {
+        @apply rounded-none size-[70px] object-cover;
+      }
+    }
+
+    #item {
+      @apply grid grid-cols-4 gap-1;
+    }
+  }
+}

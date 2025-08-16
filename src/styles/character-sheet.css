@@ -1,0 +1,53 @@
+@reference "./spacer.css";
+
+.spacer.character.sheet {
+  .window-content {
+    .sheet-header {
+      @apply flex flex-row gap-2;
+      img.profile-img {
+        @apply rounded-none size-[78px] object-cover;
+      }
+      .header-fields {
+        @apply flex flex-col gap-1;
+        input.name {
+          @apply w-full h-10 m-0 p-1 text-3xl font-bold;
+        }
+      }
+    }
+
+    #attributes {
+      @apply grid grid-cols-6 gap-1 col-span-full;
+      .field {
+        label {
+          @apply m-0 p-1 text-xs uppercase bg-black text-white text-center;
+        }
+        input {
+          @apply text-base font-bold text-center;
+        }
+      }
+    }
+
+    #traits {
+      @apply flex flex-col gap-1;
+      .trait {
+        label.trait__name {
+          @apply font-bold;
+        }
+        p.trait__notes {
+          @apply text-xs;
+        }
+      }
+    }
+
+    table#gear {
+      @apply text-xs;
+      th {
+        @apply font-bold;
+      }
+      th,
+      td {
+        @apply m-0 p-0.5;
+      }
+    }
+  }
+}
