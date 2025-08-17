@@ -1,5 +1,14 @@
 {{!-- Notes Tab --}}
 <section id="{{partId}}" class="tab {{tabs.gear.cssClass}}" data-group="primary" data-tab="gear">
+
+    {{#*inline "actions"}}
+    <a data-action="chatItem" title="{{localize 'SPACER.actor.sheet.action.item.chat'}}"><i
+            class="fa fa-comment"></i></a>
+    <a data-action="editItem" title="{{localize 'SPACER.actor.sheet.action.item.edit'}}"><i class="fas fa-edit"></i></a>
+    <a data-action="deleteItem" title="{{localize 'SPACER.actor.sheet.action.item.delete'}}"><i
+            class="fas fa-trash"></i></a>
+    {{/inline}}
+
     <table id="gear">
         <thead>
             <tr>
@@ -7,15 +16,17 @@
                 <th>CR</th>
                 <th>Qual</th>
                 <th>Slots</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             {{#each gear as | item |}}
-            <tr>
+            <tr data-item-id="{{item._id}}">
                 <td>{{item.name}}</td>
                 <td>{{item.system.credits}}</td>
                 <td>{{item.system.quality}}</td>
                 <td>{{item.system.slots}}</td>
+                <td>{{> actions}}</td>
             </tr>
             {{/each}}
         </tbody>
@@ -25,6 +36,7 @@
                 <td></td>
                 <td></td>
                 <td>{{system.slotsUsed}}</td>
+                <td></td>
             </tr>
         </tfoot>
     </table>

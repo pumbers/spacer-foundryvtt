@@ -13,13 +13,19 @@
             <label>{{localize "SPACER.item.sheet.label.slots"}}</label>
             <input type="number" name="system.slots" value="{{system.slots}}">
         </div>
-        {{!-- Armour --}}
         {{#if (eq item.type "armour")}}
+        {{!-- Armour --}}
         {{> (concat SPACER.path "/templates/sheet/item/_armour.hbs")}}
-        {{/if}}
+        {{else if (eq item.type "weapon")}}
         {{!-- Weapon --}}
-        {{#if (eq item.type "weapon")}}
         {{> (concat SPACER.path "/templates/sheet/item/_weapon.hbs")}}
+        {{else}}
+        <div id="field" class="col-span-2">
+            <label>{{localize "SPACER.item.sheet.label.traits"}}</label>
+            <multi-select name="system.traits" multiple>
+                {{selectOptions SPACER.item.gear.traits selected=system.traits localize=true}}
+            </multi-select>
+        </div>
         {{/if}}
     </div>
     <div id="notes">

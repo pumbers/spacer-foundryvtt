@@ -49,6 +49,8 @@ export class SpacerGearData extends SpacerItemData {
       credits: new NumberField({ initial: 0, min: 0 }),
       slots: new NumberField({ initial: 0, min: 0 }),
       quality: new NumberField({ initial: 1, min: 0 }),
+      traits: new ArrayField(new StringField(), { initial: [] }),
+      capacity: new NumberField({ initial: 0, min: 0 }),
     });
   }
 }
@@ -80,7 +82,6 @@ export class SpacerWeaponData extends SpacerGearData {
         choices: SPACER.item.weapon.hands,
       }),
       damage: new StringField({ initial: "0" }),
-      traits: new ArrayField(new StringField(), { initial: [] }),
     });
   }
 }

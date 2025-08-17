@@ -30,17 +30,25 @@ SPACER.actor = {
 SPACER.item = {
   trait: {
     types: {
-      species: "",
-      ability: "",
-      talent: "",
-      homeworld: "",
-      clothing: "",
-      virtue: "",
-      vice: "",
-      cybernetics: "",
-      background: "",
-      misfortune: "",
-      alignment: "",
+      species: "SPACER.item.trait.species",
+      ability: "SPACER.item.trait.ability",
+      talent: "SPACER.item.trait.talent",
+      homeworld: "SPACER.item.trait.homeworld",
+      clothing: "SPACER.item.trait.clothing",
+      virtue: "SPACER.item.trait.virtue",
+      vice: "SPACER.item.trait.vice",
+      cybernetics: "SPACER.item.trait.cybernetics",
+      background: "SPACER.item.trait.background",
+      misfortune: "SPACER.item.trait.misfortune",
+      alignment: "SPACER.item.trait.alignment",
+    },
+  },
+  gear: {
+    traits: { hidden: "SPACER.item.weapon.trait.hidden" },
+  },
+  armour: {
+    traits: {
+      bulky: "SPACER.item.armour.trait.bulky",
     },
   },
   weapon: {

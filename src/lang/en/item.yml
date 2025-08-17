@@ -5,6 +5,18 @@ SPACER:
       gear: Gear
       armour: Armour
       weapon: Weapon
+    trait:
+      species: Species
+      ability: Special Ability
+      talent: Talent
+      homeworld: Homeworld
+      clothing: Clothing
+      virtue: Virtue
+      vice: Vice
+      cybernetics: Cybernetics
+      background: Background
+      misfortune: Misfortune
+      alignment: Alignment
     weapon:
       melee: Melee
       missile: Missile
@@ -16,7 +28,7 @@ SPACER:
     sheet:
       title: "{name}"
       tab:
-        item: item
+        item: Item
         notes: Notes
         effects: Effects
       label:

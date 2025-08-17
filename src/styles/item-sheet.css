@@ -7,7 +7,7 @@
       input.name {
         @apply w-full h-8 m-0 p-2 px-2 text-3xl font-bold;
       }
-      img.item-img {
+      img.item__image {
         @apply rounded-none size-[70px] object-cover;
       }
     }

@@ -10,7 +10,7 @@ import { SpacerTraitSheet, SpacerGearSheet } from "./sheets/item-sheet.mjs";
 
 import * as Helpers from "./util/helpers.mjs";
 
-const { StringField, NumberField, BooleanField } = foundry.data.fields;
+const { StringField, NumberField, BooleanField, ArrayField } = foundry.data.fields;
 
 /* -------------------------------------------- */
 /*  Define Module Structure                         

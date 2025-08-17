@@ -13,9 +13,20 @@
         {{!-- Traits --}}
         <div id="traits">
             {{#each traits as | trait |}}
-            <div class="trait">
-                <label class="trait__name">{{trait.name}}</label>
-                <p class="trait__notes">{{{trait.system.notes}}}</p>
+            <div class="trait" data-item-id="{{trait._id}}">
+                <img src="{{trait.img}}" class="trait__image">
+                <div class="trait__details">
+                    <label class="trait__name">{{trait.name}}</label>
+                    <span class="trait__type">{{localize (concat "SPACER.item.trait." trait.system.type)}}</span>
+                </div>
+                <div class="trait__actions">
+                    <a data-action="chatItem" title="{{localize 'SPACER.actor.sheet.action.item.chat'}}"><i
+                            class="fa fa-comment"></i></a>
+                    <a data-action="editItem" title="{{localize 'SPACER.actor.sheet.action.item.edit'}}"><i
+                            class="fas fa-edit"></i></a>
+                    <a data-action="deleteItem" title="{{localize 'SPACER.actor.sheet.action.item.delete'}}"><i
+                            class="fas fa-trash"></i></a>
+                </div>
             </div>
             {{/each}}
         </div>

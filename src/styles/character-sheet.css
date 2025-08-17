@@ -28,13 +28,26 @@
     }
 
     #traits {
-      @apply flex flex-col gap-1;
+      @apply grid grid-cols-2 gap-1;
       .trait {
-        label.trait__name {
-          @apply font-bold;
+        @apply flex flex-row gap-0.5 m-0 p-1 border;
+        img.trait__image {
+          @apply size-[36px];
         }
-        p.trait__notes {
-          @apply text-xs;
+        .trait__details {
+          @apply flex flex-col gap-0.5 grow;
+          label.trait__name {
+            @apply font-bold text-base;
+          }
+          .trait__type {
+            @apply uppercase text-[0.5rem];
+          }
+          p.trait__notes {
+            @apply text-xs;
+          }
+          .trait__actions {
+            @apply flex flex-col gap-0.5;
+          }
         }
       }
     }

@@ -55,8 +55,8 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
         showItemIcons: game.settings.get(SPACER.id, "showItemIcons"),
       },
       // Categorized items
-      traits: this.actor.items.filter((item) => item.type === "trait"),
-      gear: this.actor.items.filter((item) => item.type !== "trait"),
+      traits: this.actor.items.filter((item) => item.type === "trait").sort((a, b) => a.name.localeCompare(b.name)),
+      gear: this.actor.items.filter((item) => item.type !== "trait").sort((a, b) => a.name.localeCompare(b.name)),
       //
       effects: Array.from(this.actor.allApplicableEffects()),
     });

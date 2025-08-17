@@ -1,10 +1,4 @@
 <div id="field">
-    <label>{{localize "SPACER.item.sheet.label.type"}}</label>
-    <select name="system.type">
-        {{selectOptions SPACER.item.weapon.types selected=system.type localize=true}}
-    </select>
-</div>
-<div id="field">
     <label>{{localize "SPACER.item.sheet.label.hand"}}</label>
     <select name="system.hand">
         {{selectOptions SPACER.item.weapon.hands selected=system.hand localize=true}}
@@ -14,7 +8,7 @@
     <label>{{localize "SPACER.item.sheet.label.damage"}}</label>
     <input type="text" name="system.damage" value="{{system.damage}}">
 </div>
-<div id="field" class="col-span-2">
+<div id="field" class="col-span-3">
     <label>{{localize "SPACER.item.sheet.label.traits"}}</label>
     <multi-select name="system.traits" multiple>
         {{selectOptions SPACER.item.weapon.traits selected=system.traits localize=true}}

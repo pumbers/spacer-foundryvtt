@@ -1,8 +1,18 @@
 <!-- Sheet Heaader -->
 <header id="{{partId}}" class="sheet-header">
-    <img class="item-img" src="{{item.img}}" data-action="editImage" data-edit="img" title="{{item.name}}" />
+    <img class="item__image" src="{{item.img}}" data-action="editImage" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
         <input class="name" name="name" type="text" value="{{item.name}}" placeholder="Name" />
         <div class="item__type">{{item.type}}</div>
+        <div id="field">
+            <label>{{localize "SPACER.item.sheet.label.type"}}</label>
+            <select name="system.type">
+                {{#if (eq item.type "trait")}}
+                {{selectOptions SPACER.item.trait.types selected=system.type localize=true}}
+                {{else if (eq item.type "weapon")}}
+                {{selectOptions SPACER.item.weapon.types selected=system.type localize=true}}
+                {{/if}}
+            </select>
+        </div>
     </div>
 </header>

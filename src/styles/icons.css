@@ -29,29 +29,24 @@
 
   /* Dice */
   & .icon-d4::before {
-    content: url("../assets/icons/d6.svg");
+    content: url("../assets/icons/d4.svg");
   }
   & .icon-d6::before {
     content: url("../assets/icons/d6.svg");
   }
   & .icon-d8::before {
-    content: url("../assets/icons/d6.svg");
+    content: url("../assets/icons/d8.svg");
   }
   & .icon-d10::before {
-    content: url("../assets/icons/d6.svg");
+    content: url("../assets/icons/d10.svg");
   }
   & .icon-d12::before {
-    content: url("../assets/icons/d6.svg");
+    content: url("../assets/icons/d12.svg");
   }
   & .icon-d20::before {
     content: url("../assets/icons/d20.svg");
   }
   & .icon-rolling-dice::before {
     content: url("../assets/icons/rolling-dice.svg");
-  }
-
-  /* Trait Types */
-  & .icon-homeworld::before {
-    content: url("../assets/icons/d6.svg");
   }
 }
