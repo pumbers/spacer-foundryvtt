@@ -14,7 +14,7 @@
             <tr>
                 <th>Item</th>
                 <th>CR</th>
-                <th>Qual</th>
+                <th>Quality</th>
                 <th>Slots</th>
                 <th></th>
             </tr>
@@ -24,9 +24,9 @@
             <tr data-item-id="{{item._id}}">
                 <td>{{item.name}}</td>
                 <td>{{item.system.credits}}</td>
-                <td>{{item.system.quality}}</td>
+                <td>{{item.system.quality.value}}/{{item.system.quality.max}}</td>
                 <td>{{item.system.slots}}</td>
-                <td>{{> actions}}</td>
+                <td class="actions">{{> actions}}</td>
             </tr>
             {{/each}}
         </tbody>

@@ -3,7 +3,7 @@
     <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" title="{{actor.name}}" />
     <div class="header-fields">
         <input class="name" name="name" type="text" value="{{actor.name}}" placeholder="Name" />
-        <div class="flex flex-row gap-1">
+        <div class="grid grid-cols-5 gap-1">
             <div class="field">
                 <label>{{localize "SPACER.actor.sheet.label.level"}}</label>
                 <input type="text" value="{{system.level}}" readonly>
@@ -15,10 +15,6 @@
             <div class="field">
                 <label>{{localize "SPACER.actor.sheet.label.hd"}}</label>
                 <input type="text" name="system.hd" value="{{system.hd}}">
-            </div>
-            <div class="field">
-                <label>{{localize "SPACER.actor.sheet.label.hp"}}</label>
-                <input type="text" value="{{system.hp.value}}/{{system.hp.max}}" readonly>
             </div>
         </div>
     </div>

@@ -15,6 +15,25 @@
       }
     }
 
+    #status {
+      @apply flex flex-row gap-1;
+      &.track {
+        input {
+          @apply w-8;
+        }
+        .track__type {
+          @apply m-0 p-0.5 border min-w-8 text-center shrink;
+        }
+        .track__gauge {
+          @apply grow flex flex-row gap-0;
+          @apply border;
+          .track__mark {
+            @apply grow;
+          }
+        }
+      }
+    }
+
     #attributes {
       @apply grid grid-cols-6 gap-1 col-span-full;
       .field {
@@ -42,12 +61,40 @@
           .trait__type {
             @apply uppercase text-[0.5rem];
           }
-          p.trait__notes {
-            @apply text-xs;
+        }
+      }
+    }
+
+    #weapons {
+      @apply grid grid-cols-2 gap-1;
+      .weapon {
+        @apply relative flex flex-row gap-0.5 m-0 p-1 border;
+        img.weapon__image {
+          @apply size-[36px];
+        }
+        .weapon__details {
+          @apply flex flex-col gap-0.5 grow;
+          label.weapon__name {
+            @apply font-bold text-base;
           }
-          .trait__actions {
-            @apply flex flex-col gap-0.5;
+          .weapon__type {
+            @apply uppercase text-[0.5rem];
           }
+        }
+        &:hover {
+          img,
+          .weapon__details {
+            @apply opacity-20;
+          }
+          .actions {
+            @apply flex flex-row gap-1;
+          }
+        }
+      }
+      .actions {
+        @apply absolute top-0 left-0 w-full h-full text-center hidden m-0 p-0;
+        [data-action] {
+          @apply m-auto text-2xl;
         }
       }
     }
@@ -60,6 +107,12 @@
       th,
       td {
         @apply m-0 p-0.5;
+      }
+      td.actions {
+        @apply text-right opacity-20;
+        &:hover {
+          @apply opacity-100;
+        }
       }
     }
   }

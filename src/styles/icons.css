@@ -49,4 +49,9 @@
   & .icon-rolling-dice::before {
     content: url("../assets/icons/rolling-dice.svg");
   }
+
+  /* Status */
+  & .icon-death-skull::before {
+    content: url("../assets/icons/death-skull.svg");
+  }
 }

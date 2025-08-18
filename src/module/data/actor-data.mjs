@@ -54,7 +54,9 @@ export class SpacerCharacterData extends foundry.abstract.TypeDataModel {
     super.prepareBaseData();
     console.log("SpacerCharacterData.prepareBaseData()", this);
 
-    this.level = Math.ceil(this.xp / 1000);
+    this.level = Math.ceil(this.xp / 1000) + 1;
+
+    this.hp.lost = Math.max(this.hp.max - this.hp.value, 0);
 
     Object.values(this.attributes).forEach((attribute) => {
       attribute.value = attribute.bonus + 10;

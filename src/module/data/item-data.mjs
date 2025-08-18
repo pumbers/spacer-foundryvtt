@@ -48,9 +48,11 @@ export class SpacerGearData extends SpacerItemData {
     return Object.assign(super.defineSchema(), {
       credits: new NumberField({ initial: 0, min: 0 }),
       slots: new NumberField({ initial: 0, min: 0 }),
-      quality: new NumberField({ initial: 1, min: 0 }),
+      quality: new SchemaField({
+        max: new NumberField({ initial: 1, min: 0 }),
+        value: new NumberField({ initial: 1, min: 0 }),
+      }),
       traits: new ArrayField(new StringField(), { initial: [] }),
-      capacity: new NumberField({ initial: 0, min: 0 }),
     });
   }
 }

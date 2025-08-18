@@ -20,8 +20,8 @@ SPACER:
     weapon:
       melee: Melee
       missile: Missile
-      "1H": 1 Handed
-      "2H": 2 Handed
+      "1H": 1-Handed
+      "2H": 2-Handed
       trait:
         hidden: Hidden
         stun: Stun
