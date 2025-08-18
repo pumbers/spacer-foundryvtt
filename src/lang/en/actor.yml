@@ -19,3 +19,8 @@ SPACER:
         xp: XP
         hd: Hit Die
         hp: Hit Points
+      action:
+        item:
+          chat: Send to chat
+          edit: Edit {name}
+          delete: Remove {name}

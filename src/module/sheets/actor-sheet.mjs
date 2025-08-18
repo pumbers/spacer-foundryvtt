@@ -22,6 +22,7 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
     },
     actions: {
       //
+      chatItem: SpacerActorSheet.#chatItem,
       createItem: SpacerActorSheet.#createItem,
       editItem: SpacerActorSheet.#editItem,
       deleteItem: SpacerActorSheet.#deleteItem,
@@ -65,9 +66,51 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
     return context;
   }
 
+  _onFirstRender(context, options) {
+    // console.log("_onFirstRender()", context, options);
+    super._onFirstRender(context, options);
+    this._createContextMenu(this._getTraitContextOptions, ".trait", { fixed: true });
+  }
+
+  _getTraitContextOptions() {
+    // console.log("_getTraitContextOptions()");
+    return [
+      {
+        name: game.i18n.localize("SPACER.actor.sheet.action.item.chat"),
+        icon: '<i class="fas fa-comment"></i>',
+        callback: (html) => {
+          SpacerActorSheet.#chatItem.call(this, null, html);
+        },
+      },
+      {
+        name: game.i18n.format("SPACER.actor.sheet.action.item.edit", {
+          name: game.i18n.localize("SPACER.item.type.trait"),
+        }),
+        icon: '<i class="fas fa-edit"></i>',
+        callback: (html) => {
+          SpacerActorSheet.#editItem.call(this, null, html);
+        },
+      },
+      {
+        name: game.i18n.format("SPACER.actor.sheet.action.item.delete", {
+          name: game.i18n.localize("SPACER.item.type.trait"),
+        }),
+        icon: '<i class="fas fa-trash"></i>',
+        callback: (html) => {
+          SpacerActorSheet.#deleteItem.call(this, null, html);
+        },
+      },
+    ];
+  }
+
   /* -------------------------------------------- */
   /*  Action Functions                       
   /* -------------------------------------------- */
+
+  static #chatItem(event, target) {
+    console.log("#chatItem()", target.dataset);
+    return Handlers.onChatItem(this.actor, event, target);
+  }
 
   static #createItem(event, target) {
     console.log("#createItem()", target.dataset);
