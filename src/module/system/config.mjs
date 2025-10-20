@@ -56,6 +56,8 @@ SPACER.item = {
   },
   armour: {
     types: {
+      light: "SPACER.item.armour.type.light",
+      medium: "SPACER.item.armour.type.medium",
       heavy: "SPACER.item.armour.type.heavy",
     },
     traits: {

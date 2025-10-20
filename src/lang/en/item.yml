@@ -26,6 +26,10 @@ SPACER:
         hidden: Hidden
         stun: Stun
     armour:
+      type:
+        light: Light
+        medium: Medium
+        heavy: Heavy
       trait:
         bulky: Bulky
     sheet:

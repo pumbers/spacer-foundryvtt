@@ -9,6 +9,14 @@
                 <input type="text" value="{{attribute.value}}/{{numberFormat attribute.bonus sign=true}}" readonly>
             </div>
             {{/each}}
+            {{#if flags.edit}}
+            {{#each system.attributes as | attribute key |}}
+            <div class="field">
+                {{!-- <label>{{localize (concat "SPACER.actor.attribute." key)}}</label> --}}
+                <input type="number" name="system.attributes.{{key}}.value" value="{{attribute.value}}">
+            </div>
+            {{/each}}
+            {{/if}}
         </div>
         {{!-- Status --}}
         <div id="status" class="track">

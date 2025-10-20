@@ -16,11 +16,25 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
   static DEFAULT_OPTIONS = {
     window: {
       resizable: true,
+      controls: [
+        {
+          icon: "fa-solid fa-dice",
+          label: "Roll New Character",
+          action: "rollCharacter",
+        },
+        {
+          icon: "fa-solid fa-pen-to-square",
+          label: "Edit Character",
+          action: "toggleEdit",
+        },
+      ],
     },
     form: {
       submitOnChange: true,
     },
     actions: {
+      rollCharacter: SpacerActorSheet.#rollCharacter,
+      toggleEdit: SpacerActorSheet.#toggleEdit,
       //
       chatItem: SpacerActorSheet.#chatItem,
       createItem: SpacerActorSheet.#createItem,
@@ -108,6 +122,27 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
   /* -------------------------------------------- */
   /*  Action Functions                       
   /* -------------------------------------------- */
+
+  static async #rollCharacter(event, target) {
+    console.log("#rollCharacter()", target.dataset);
+    // RollAttributes
+    const attributes = {};
+    for (const attribute in this.actor.system.attributes) {
+      if (!Object.hasOwn(this.actor.system.attributes, attribute)) continue;
+      const result = await new Roll("3d6kl").evaluate();
+      attributes[attribute] = { value: result.total + 10 };
+    }
+    this.actor.update({ system: { attributes } });
+
+    // TODO Roll Traits
+  }
+
+  static #toggleEdit(event, target) {
+    console.log("#toggleEdit()", target.dataset);
+    const flag = !!this.actor.flags[SPACER.id]?.edit;
+    console.log("... flag", flag);
+    this.actor.setFlag(SPACER.id, "edit", !flag);
+  }
 
   static #chatItem(event, target) {
     console.log("#chatItem()", target.dataset);
