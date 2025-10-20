@@ -4,7 +4,7 @@ title: Spacer v3
 description: Spacer v3 for FoundryVTT (Official - Alpha)
 compatibility:
   minimum: "13"
-  verified: "13.347"
+  verified: "13.350"
 authors:
   - name: 3rdDog
 license: LICENSE.txt

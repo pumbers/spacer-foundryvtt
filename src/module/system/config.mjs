@@ -45,8 +45,19 @@ SPACER.item = {
   },
   gear: {
     traits: { hidden: "SPACER.item.weapon.trait.hidden" },
+    locations: ["readied", "dropped", "packed", "stowed", "stored"],
+    icons: {
+      readied: "icon-battle-gear",
+      packed: "icon-knapsack",
+      dropped: "icon-drop-weapon",
+      stowed: "icon-chest",
+      stored: "icon-white-tower",
+    },
   },
   armour: {
+    types: {
+      heavy: "SPACER.item.armour.type.heavy",
+    },
     traits: {
       bulky: "SPACER.item.armour.trait.bulky",
     },

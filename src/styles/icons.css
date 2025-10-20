@@ -54,4 +54,21 @@
   & .icon-death-skull::before {
     content: url("../assets/icons/death-skull.svg");
   }
+
+  /* Gear Locations */
+  & .icon-knapsack::before {
+    content: url("../assets/icons/knapsack.svg");
+  }
+  & .icon-drop-weapon::before {
+    content: url("../assets/icons/drop-weapon.svg");
+  }
+  & .icon-battle-gear::before {
+    content: url("../assets/icons/battle-gear.svg");
+  }
+  & .icon-chest::before {
+    content: url("../assets/icons/chest.svg");
+  }
+  & .icon-white-tower::before {
+    content: url("../assets/icons/white-tower.svg");
+  }
 }

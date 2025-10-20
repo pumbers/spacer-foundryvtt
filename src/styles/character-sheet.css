@@ -5,7 +5,7 @@
     .sheet-header {
       @apply flex flex-row gap-2;
       img.profile-img {
-        @apply rounded-none size-[78px] object-cover;
+        @apply rounded-none size-[116px] object-cover;
       }
       .header-fields {
         @apply flex flex-col gap-1;
@@ -21,13 +21,13 @@
         input {
           @apply w-8;
         }
-        .track__type {
+        .track-type {
           @apply m-0 p-0.5 border min-w-8 text-center shrink;
         }
-        .track__gauge {
+        .track-gauge {
           @apply grow flex flex-row gap-0;
           @apply border;
-          .track__mark {
+          .track-mark {
             @apply grow;
           }
         }
@@ -50,15 +50,15 @@
       @apply grid grid-cols-2 gap-1;
       .trait {
         @apply flex flex-row gap-0.5 m-0 p-1 border;
-        img.trait__image {
+        img.trait-image {
           @apply size-[36px];
         }
-        .trait__details {
+        .trait-details {
           @apply flex flex-col gap-0.5 grow;
-          label.trait__name {
+          label.trait-name {
             @apply font-bold text-base;
           }
-          .trait__type {
+          .trait-type {
             @apply uppercase text-[0.5rem];
           }
         }
@@ -69,21 +69,21 @@
       @apply grid grid-cols-2 gap-1;
       .weapon {
         @apply relative flex flex-row gap-0.5 m-0 p-1 border;
-        img.weapon__image {
+        img.weapon-image {
           @apply size-[36px];
         }
-        .weapon__details {
+        .weapon-details {
           @apply flex flex-col gap-0.5 grow;
-          label.weapon__name {
+          label.weapon-name {
             @apply font-bold text-base;
           }
-          .weapon__type {
+          .weapon-type {
             @apply uppercase text-[0.5rem];
           }
         }
         &:hover {
           img,
-          .weapon__details {
+          .weapon-details {
             @apply opacity-20;
           }
           .actions {
@@ -109,7 +109,7 @@
         @apply m-0 p-0.5;
       }
       td.actions {
-        @apply text-right opacity-20;
+        @apply text-right opacity-30;
         &:hover {
           @apply opacity-100;
         }

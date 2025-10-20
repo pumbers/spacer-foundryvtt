@@ -21,22 +21,22 @@ export class SpacerCharacterData extends foundry.abstract.TypeDataModel {
       // Attributes
       attributes: new SchemaField({
         str: new SchemaField({
-          bonus: new NumberField({ initial: 0 }),
+          value: new NumberField({ initial: 10 }),
         }),
         agi: new SchemaField({
-          bonus: new NumberField({ initial: 0 }),
+          value: new NumberField({ initial: 10 }),
         }),
         phy: new SchemaField({
-          bonus: new NumberField({ initial: 0 }),
+          value: new NumberField({ initial: 10 }),
         }),
         int: new SchemaField({
-          bonus: new NumberField({ initial: 0 }),
+          value: new NumberField({ initial: 10 }),
         }),
         ins: new SchemaField({
-          bonus: new NumberField({ initial: 0 }),
+          value: new NumberField({ initial: 10 }),
         }),
         pre: new SchemaField({
-          bonus: new NumberField({ initial: 0 }),
+          value: new NumberField({ initial: 10 }),
         }),
       }),
       //
@@ -59,7 +59,7 @@ export class SpacerCharacterData extends foundry.abstract.TypeDataModel {
     this.hp.lost = Math.max(this.hp.max - this.hp.value, 0);
 
     Object.values(this.attributes).forEach((attribute) => {
-      attribute.value = attribute.bonus + 10;
+      attribute.bonus = attribute.value - 10;
     });
 
     console.log("... actor data", this);

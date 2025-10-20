@@ -11,6 +11,8 @@
                 {{selectOptions SPACER.item.trait.types selected=system.type localize=true}}
                 {{else if (eq item.type "weapon")}}
                 {{selectOptions SPACER.item.weapon.types selected=system.type localize=true}}
+                {{else if (eq item.type "armour")}}
+                {{selectOptions SPACER.item.armour.types selected=system.type localize=true}}
                 {{/if}}
             </select>
         </div>

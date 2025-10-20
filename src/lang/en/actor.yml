@@ -19,7 +19,27 @@ SPACER:
         xp: XP
         hd: Hit Die
         hp: Hit Points
+        defence: Defence
+        dodge: Dodge
+        parry: Parry
+        block: Block
+        location:
+          readied: Readied
+          packed: Packed
+          dropped: Dropped
+          stowed: Stowed
+          stored: Stored
+      table:
+        item: Item
+        cr: CR
+        quality: Quality
+        slots: Slots
+        location: Loc
       action:
+        roll:
+          disadvantage: Roll with disadvantage
+          normal: Roll
+          advantage: Roll with advantage
         item:
           chat: Send to chat
           edit: Edit {name}

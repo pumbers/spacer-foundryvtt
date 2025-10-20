@@ -25,6 +25,9 @@ SPACER:
       trait:
         hidden: Hidden
         stun: Stun
+    armour:
+      trait:
+        bulky: Bulky
     sheet:
       title: "{name}"
       tab:

@@ -52,6 +52,7 @@ export class SpacerGearData extends SpacerItemData {
         max: new NumberField({ initial: 1, min: 0 }),
         value: new NumberField({ initial: 1, min: 0 }),
       }),
+      location: new StringField({ initial: "packed" }),
       traits: new ArrayField(new StringField(), { initial: [] }),
     });
   }
@@ -60,7 +61,7 @@ export class SpacerGearData extends SpacerItemData {
 export class SpacerArmourData extends SpacerGearData {
   static defineSchema() {
     return Object.assign(super.defineSchema(), {
-      defence: new SchemaField({ bonus: new NumberField({ initial: 0 }) }),
+      defence: new SchemaField({ value: new NumberField({ initial: 10 }) }),
     });
   }
 
@@ -68,7 +69,7 @@ export class SpacerArmourData extends SpacerGearData {
     super.prepareBaseData();
     console.log("SpacerArmourData.prepareBaseData()", this);
 
-    this.defence.value = this.defence.bonus + 10;
+    this.defence.bonus = this.defence.value - 10;
   }
 }
 

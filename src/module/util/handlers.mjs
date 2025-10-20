@@ -66,15 +66,7 @@ export function onIemChangeLocation(actor, locations, event, target) {
 
   // Move it to the next location
   const movedTo = (locations.findIndex((location) => location === item.system.location) + 1) % 5;
-  changes.push({ _id: itemId, "system.location": SPACER.item.inventory.locations[movedTo] });
-
-  // If it's a container, also move its contents
-  if (item.system.isContainer) {
-    actor.items.forEach((i) => {
-      if (i.system.container === itemId)
-        changes.push({ _id: i._id, "system.location": SPACER.item.inventory.locations[movedTo] });
-    });
-  }
+  changes.push({ _id: itemId, "system.location": locations[movedTo] });
 
   actor.updateEmbeddedDocuments("Item", changes);
 }

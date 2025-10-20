@@ -12,16 +12,16 @@
         </div>
         {{!-- Status --}}
         <div id="status" class="track">
-            <span class="track__type" title="{{localize 'SPACER.actor.sheet.label.hp'}}">
+            <span class="track-type" title="{{localize 'SPACER.actor.sheet.label.hp'}}">
                 <i class="icon-death-skull"></i>
             </span>
             <input type="number" name="system.hp.value" value="{{system.hp.value}}">
-            <span class="track__gauge">
+            <span class="track-gauge">
                 {{#each (range system.hp.value)}}
-                <span class="track__mark bg-green-700"></span>
+                <span class="track-mark bg-green-700"></span>
                 {{/each}}
                 {{#each (range system.hp.lost)}}
-                <span class="track__mark bg-transparent"></span>
+                <span class="track-mark bg-transparent"></span>
                 {{/each}}
             </span>
             <input type="number" name="system.hp.max" value="{{system.hp.max}}">
@@ -30,10 +30,10 @@
         <div id="traits">
             {{#each traits as | trait |}}
             <div class="trait" data-item-id="{{trait._id}}">
-                <img src="{{trait.img}}" class="trait__image">
-                <div class="trait__details">
-                    <label class="trait__name">{{trait.name}}</label>
-                    <span class="trait__type">{{localize (concat "SPACER.item.trait." trait.system.type)}}</span>
+                <img src="{{trait.img}}" class="trait-image">
+                <div class="trait-details">
+                    <label class="trait-name">{{trait.name}}</label>
+                    <span class="trait-type">{{localize (concat "SPACER.item.trait." trait.system.type)}}</span>
                 </div>
             </div>
             {{/each}}
@@ -42,19 +42,24 @@
         <div id="weapons">
             {{#each weapons as | weapon |}}
             <div class="weapon" data-item-id="{{weapon._id}}">
-                <img src="{{weapon.img}}" class="weapon__image">
-                <div class="weapon__details">
-                    <label class="weapon__name">{{weapon.name}}</label>
-                    <span class="weapon__type">
+                <img src="{{weapon.img}}" class="weapon-image">
+                <div class="weapon-details">
+                    <label class="weapon-name">{{weapon.name}}</label>
+                    <span class="weapon-type">
                         {{localize (concat "SPACER.item.weapon." weapon.system.type)}}&nbsp;
                         {{localize (concat "SPACER.item.type." weapon.type)}}&nbsp;
                         {{localize (concat "SPACER.item.weapon." weapon.system.hand)}}
                     </span>
                 </div>
                 <div class="actions">
-                    <span data-action="" data-roll-with="disadvantage"><i class="icon-d20"></i>&downarrow;</span>
-                    <span data-action="" data-roll-with="normal"><i class="icon-d20"></i></span>
-                    <span data-action="" data-roll-with="advantage"><i class="icon-d20"></i>&uparrow;</span>
+                    <span data-action="" data-roll-with="disadvantage"
+                        title="{{localize 'SPACER.actor.sheet.action.roll.disadvantage'}}"><i
+                            class="icon-d20"></i>&downarrow;</span>
+                    <span data-action="" data-roll-with="normal"
+                        title="{{localize 'SPACER.actor.sheet.action.roll.normal'}}"><i class="icon-d20"></i></span>
+                    <span data-action="" data-roll-with="advantage"
+                        title="{{localize 'SPACER.actor.sheet.action.roll.advantage'}}"><i
+                            class="icon-d20"></i>&uparrow;</span>
                 </div>
             </div>
             {{/each}}

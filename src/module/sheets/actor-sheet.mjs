@@ -26,6 +26,7 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
       createItem: SpacerActorSheet.#createItem,
       editItem: SpacerActorSheet.#editItem,
       deleteItem: SpacerActorSheet.#deleteItem,
+      changeItemLocation: SpacerActorSheet.#changeItemLocation,
       //
       createEffect: SpacerActorSheet.#manageEffect,
       editEffect: SpacerActorSheet.#manageEffect,
@@ -115,7 +116,7 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
 
   static #createItem(event, target) {
     console.log("#createItem()", target.dataset);
-    Handlers.onCreateItem(this.actor, event, target).then((item) => item.sheet.render(true));
+    return Handlers.onCreateItem(this.actor, event, target).then((item) => item.sheet.render(true));
   }
 
   static #editItem(event, target) {
@@ -128,9 +129,14 @@ class SpacerActorSheet extends HandlebarsApplicationMixin(foundry.applications.s
     return Handlers.onDeleteItem(this.actor, event, target);
   }
 
+  static #changeItemLocation(event, target) {
+    console.log("#changeItemLocation()", target.dataset);
+    return Handlers.onIemChangeLocation(this.actor, SPACER.item.gear.locations, event, target);
+  }
+
   static #manageEffect(event, target) {
     console.log("#manageEffect", target.dataset);
-    Effects.onManageActiveEffect(this.actor, event, target);
+    return Effects.onManageActiveEffect(this.actor, event, target);
   }
 
   /* -------------------------------------------- */

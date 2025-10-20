@@ -12,10 +12,11 @@
     <table id="gear">
         <thead>
             <tr>
-                <th>Item</th>
-                <th>CR</th>
-                <th>Quality</th>
-                <th>Slots</th>
+                <th>{{localize "SPACER.actor.sheet.table.item"}}</th>
+                <th>{{localize "SPACER.actor.sheet.table.cr"}}</th>
+                <th>{{localize "SPACER.actor.sheet.table.quality"}}</th>
+                <th>{{localize "SPACER.actor.sheet.table.slots"}}</th>
+                <th>{{localize "SPACER.actor.sheet.table.location"}}</th>
                 <th></th>
             </tr>
         </thead>
@@ -26,6 +27,11 @@
                 <td>{{item.system.credits}}</td>
                 <td>{{item.system.quality.value}}/{{item.system.quality.max}}</td>
                 <td>{{item.system.slots}}</td>
+                <td>
+                    <a class="mr-2" data-action="changeItemLocation"
+                        title="{{localize (concat 'SPACER.actor.sheet.label.location.' item.system.location)}}"><i
+                            class="{{property ../SPACER.item.gear.icons item.system.location}}"></i></a>
+                </td>
                 <td class="actions">{{> actions}}</td>
             </tr>
             {{/each}}
@@ -35,7 +41,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>{{system.slotsUsed}}</td>
+                <td>{{system.slotsUsed}}/{{system.slotsAvailable}}</td>
+                <td></td>
                 <td></td>
             </tr>
         </tfoot>
